@@ -11,20 +11,98 @@
     <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css'>
     <link rel="stylesheet" href="style.css">
 
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
   </head>
-  <body>
+  <body class="">
 
-<header></header>
+<header class="container-fluid banner">
+
+</header>
 
 
-<main>
+<main class="container-fluid">
+    <!-- Bee row -->
+    <div id="flightpath-window" class="row flightpath-window">
+    
+        
+    </div>
+    <!-- Flower row -->
+    <div class="row">
+        <div class="col d-flex flex-column-reverse text-center">
+            <h1 onclick="clickMine()" class="flower display-1">🌼</h1>
+        </div>
+    </div>
 
-<h1 class="text-center">Hello world</h1>
+    <!-- Interface row -->
+    <div class="row justify-content-center">
+        <div id="honey-count" class="col-2 interface-side">
+            <h1 class="text-center">Honey<p>🍯</p><br>
+                <p class="mb-3 pb-3">0</p>
+            </h1>
+        </div>
+        <div class="col-8 d-flex interface justify-content-around align-items-center text-center">
+            <div class="row"><div class="col">
+                <p id="bees-price" class="m-0">Price: 777</p>
+                <button onclick="buyUpgrade(beesUpgrade)" class="btn btn-primary p-2 m-1"><p class=" fs-1 m-0 mdi mdi-bee"></p><p class="m-0">More Bees!</p> </button>
+                <p id="bees-owned" class="m-0">Owned: 999</p>
+            </div></div>
+            <div class="row"><div class="col">
+                <p id="power-price" class="m-0">Price: 777</p> <button onclick="buyUpgrade(beesPowerUpgrade)" class="btn btn-primary p-2 m-1"><p class=" fs-1 m-0 mdi mdi-speedometer"></p><p class="m-0">More Power!</p> </button>
+                <p id="power-owned" class="m-0">Owned: 999</p>
+            </div></div>
+            <div class="row"><div class="col">
+                <p id="click-price" class="m-0">Price: 777</p> <button onclick="buyUpgrade(clickUpgrade)" class="btn btn-primary p-2 m-1"><p class=" fs-1 m-0 mdi mdi-cursor-default"></p><p class="m-0">More Click!</p> </button>
+                <p id="click-owned" class="m-0">Owned: 999</p>
+            </div></div>
+            <div class="row"><div class="col">
+                <p id="bank-price" class="m-0">Price: 777</p> <button onclick="buyUpgrade(bankUpgrade)" class="btn btn-primary p-2 m-1"><p class=" fs-1 m-0 mdi mdi-bank"></p><p class="m-0">More Banking?</p> </button>
+                <p id="bank-owned" class="m-0">Owned: 999</p>
+
+            </div></div>
+            
+            <div class="row"><div class="col">
+                <button onclick="newBee()" class="btn btn-primary p-2 m-1">new bee</button>
+            </div></div>
+            
+            <!-- NOTE future buttons here -->
+            <!-- <div class="row"><div class="col">
+                <button class="btn btn-primary p-2 m-1">X</button>
+                
+            </div></div> -->
+            
+            
+            
+            
+        </div>
+        <div class="col-2 interface-side">
+            <h1 class=""></h1>
+        </div>
+    </div>
+
 
 </main>
 
 
-<footer></footer>
+<footer class="container-fluid banner">
+
+</footer>
 
 
 

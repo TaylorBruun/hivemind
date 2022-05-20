@@ -1,3 +1,68 @@
-h1{
-    color: teal;
+:root{
+    --colorBanners: rgb(39, 41, 150);
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    background-image: url(./img/bgField.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main{
+    flex-grow: 1;
+}
+
+.banner{
+background-color: var(--colorBanners);
+min-height: 10vh;
+}
+
+.flightpath-window{
+    min-height: 50vh;
+    position: relative;
+}
+
+.game-window{
+   
+min-height: 60vh;
+}
+
+.interface{
+    background-color:rgb(238, 213, 182); 
+}
+
+.interface-side{
+    /* max-width: 10%; NOTE i might make these little cards later instead of big squares */
+    background-color: aqua;
+}
+
+.flower{
+    user-select: none;
+    cursor: pointer;
+}
+
+.bee{
+    /* align-self: start; */
+    position: absolute;
+    transition: all 2s linear;
+
+
+    /* animation-name: flight;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+    
+}
+
+@keyframes flight {
+    from{
+        align-self: start;
+        
+    }
+    to{
+        align-self: end;
+    }
 }
