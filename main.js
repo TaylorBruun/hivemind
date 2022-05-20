@@ -42,6 +42,7 @@ function newBee(){
  
     let bee = new Bee(Math.floor(Math.random()*100), Math.floor(Math.random()*100))
     beeArray.push(bee)
+    beeDrawer()
     
 }
 
@@ -112,26 +113,32 @@ function beeDrawer(){
     document.getElementById('flightpath-window').innerHTML = template
 }
 
-function beeWander(){
-    beeArray.forEach(bee => {
-        bee.top += Math.floor(Math.random()*4)
-        bee.left += Math.floor(Math.random()*4)
-    //    NOTE upper and lower bounds for bee wandering
-        if(bee.top >= 98){
-            bee.top = 98
-        }
-        if(bee.top <= 2){
-            bee.top = 2
-        }
-        if(bee.left >= 98){
-            bee.left = 98
-        }
-        if(bee.left <= 2){
-            bee.left = 2
-        }
 
+function beeWander(){
+    let bees = document.querySelectorAll('.bee')
+    bees.forEach(bee => {
+let posX = parseInt(bee.style.left)
+let posY = parseInt(bee.style.top)
+        posY += (Math.round(Math.random() * 2 -1))*4
+        posX += (Math.round(Math.random() * 2 -1))*4
+    //    NOTE upper and lower bounds for bee wandering
+        if(posY >= 95){
+            posY = 95
+        }
+        if(posY <= 0){
+            posY = 0
+        }
+        if(posX >= 95){
+            posX = 95
+        }
+        if(posX <= 0){
+           posX = 0
+        }
+        bee.style.top = posY + '%'
+        bee.style.left = posX + '%'
     });
-    beeDrawer()
+    // beeDrawer()
+    
 }
 
 function updateAllStats(){}

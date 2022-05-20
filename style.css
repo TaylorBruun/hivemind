@@ -48,6 +48,8 @@ min-height: 60vh;
     /* align-self: start; */
     position: absolute;
     transition: all 2s linear;
+    height: 5px;
+    width: 5px;
 
 
     /* animation-name: flight;
