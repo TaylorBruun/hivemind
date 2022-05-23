@@ -97,12 +97,27 @@ function updateBankStats(){
     document.getElementById('bank-owned').innerText = `Owned: ${bankUpgrade.owned}`
 }
 
+function updateStatsDisplay(){
+    document.getElementById('mods').innerHTML=
+    `<h1 class="text-center">Mods</h1>
+        <p class="m-0 p-1">Bees: ${beesUpgrade.owned} Honey/second</p>
+        <p class="m-0 p-1">Power: extra ${beesPowerUpgrade.owned}% from Bees</p>
+        <p class="m-0 p-1">Clicks: ${clickUpgrade.owned} per click</p>
+        <p class="m-0 p-1">Banks: ${bankUpgrade.owned}% Honey/second</p>`
+
+}
+
 function updateStats(){
     updateClickStats()
     updateBeesPowerStats()
     updateBankStats()
     updateBeesStats()
+    updateStatsDisplay()
 }
+
+
+
+
 
 function beeDrawer(){
     let template =''
@@ -114,34 +129,35 @@ function beeDrawer(){
 }
 
 
-function beeWander(){
+function beeWander() {
     let bees = document.querySelectorAll('.bee')
     bees.forEach(bee => {
-let posX = parseInt(bee.style.left)
-let posY = parseInt(bee.style.top)
-        posY += (Math.round(Math.random() * 2 -1))*4
-        posX += (Math.round(Math.random() * 2 -1))*4
-    //    NOTE upper and lower bounds for bee wandering
-        if(posY >= 95){
+        let posX = parseInt(bee.style.left)
+        let posY = parseInt(bee.style.top)
+        posY += (Math.round(Math.random() * 2 - 1)) * 4
+        posX += (Math.round(Math.random() * 2 - 1)) * 4
+        //    NOTE upper and lower bounds for bee wandering
+        if (posY >= 95) {
             posY = 95
         }
-        if(posY <= 0){
+        if (posY <= 0) {
             posY = 0
         }
-        if(posX >= 95){
+        if (posX >= 95) {
             posX = 95
         }
-        if(posX <= 0){
-           posX = 0
+        if (posX <= 0) {
+            posX = 0
         }
         bee.style.top = posY + '%'
         bee.style.left = posX + '%'
     });
     // beeDrawer()
-    
+
 }
 
-function updateAllStats(){}
+
+
 
 
 setInterval(collectAuto, 1000)
